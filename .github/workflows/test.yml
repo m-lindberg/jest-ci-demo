@@ -39,15 +39,6 @@ jobs:
           files: ./coverage/coverage-final.json
           flags: unittests
           name: codecov-umbrella
-
-      - name: Run tests with coverage
-        run: npm test -- --coverage
-      
-      - name: Upload coverage report
-        uses: actions/upload-artifact@v3
-        with:
-          name: coverage-report
-          path: coverage/
       
       - name: Comment coverage on PR
         if: github.event_name == 'pull_request'
